@@ -1,0 +1,95 @@
+#!/bin/bash
+
+#
+# getpackages - Download extra Raspberry Pi software
+#
+# 26Jun19  Removed libav-tools
+# 09Apr19  Removed pip3 install of iminuit
+# 01Mar19  Added jupyter-notebook
+# 24Feb19  Added python3-sklearn
+# 23Dec18  Added pip installation of iminuit
+# 10Oct18  Added emacs
+# 26Sep18  Added arduino and arduino-mk packages
+# 21Sep18  Added update of apt-get and aptitude, added option to deal with
+#          missing package caused by hash mismatch
+# 04Apr18  Switched from apt-get to aptitude, added error check
+# 26Jan18  Added qv4l2
+# 16Jan18  Removed okular, added inkscape and librecad
+# 29Oct17  Added mupdf
+# 26Jul16  Updated for 150m16
+# 27May16  Everett Lipman
+#
+
+COMMAND="aptitude"
+OPTIONS="-o APT::Get::Fix-Missing=true -y install"
+UPDATE="$COMMAND update"
+BOOTSTRAP="$COMMAND -y safe-upgrade apt aptitude"
+UPGRADE="$COMMAND -y safe-upgrade"
+#
+# The following line is used only with apt-get:
+#
+# AUTOREMOVE="$COMMAND -y autoremove"
+AUTOREMOVE=""
+PACKAGES="arduino arduino-mk bc emacs enscript gv htop imagemagick"
+PACKAGES="$PACKAGES inkscape jupyter-notebook librecad lsof"
+PACKAGES="$PACKAGES mupdf pdftk python3-mpmath python3-sklearn python3-smbus"
+PACKAGES="$PACKAGES qv4l2 spyder3 texlive vim-gtk x11-apps xterm"
+
+#
+# PIP="pip3"
+# PIPCOMMAND="install iminuit==1.2"
+#
+# Use of pip3 to install packages is deprecated.  Instead,
+# use
+#
+#    sudo pip3 install -t . foopkg
+#    sudo chown -R pi:pi foopkg-dirs
+#
+# in plib directory.
+#
+
+if [ `id -u` -ne 0 ]
+then
+   echo >&2
+   echo "$0: this script must be run as root." >&2
+   echo >&2
+   exit 1
+fi
+
+$UPDATE
+$BOOTSTRAP
+$UPGRADE
+
+$COMMAND $OPTIONS $PACKAGES
+$AUTOREMOVE
+
+if [ $? -ne 0 ]
+then
+   echo >&2
+   echo >&2
+   echo "WARNING: $COMMAND did not complete.  Rerunning."
+   echo >&2
+   echo >&2
+
+   $UPDATE
+   $UPGRADE
+   $COMMAND $OPTIONS $PACKAGES
+   $AUTOREMOVE
+fi
+
+#
+# Direct use of pip3 is deprecated.  See above.
+#
+# sudo $PIP $PIPCOMMAND
+#
+
+#
+# Set paper size to letter
+#
+/usr/bin/tl-paper set all letter
+echo letter > /etc/papersize
+
+#
+# Fix problem with dvips fonts
+#
+updmap-sys --setoption LW35=ADOBE --setoption dvipsDownloadBase35=false

@@ -1,0 +1,42 @@
+Packages installed in plib directory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+29Jun19  Everett Lipman
+
+NOTE: this file is not yet complete
+
+Use of pip3 to install packages is deprecated.  Instead,
+use
+
+   sudo pip3 install -t . foopkg
+   sudo chown -R pi:pi foopkg-dirs
+
+in plib directory.
+-------------------------------------------------------------------------------
+
+Package install command list:
+
+sudo pip3 install -t . iminuit=1.2
+
+import Adafruit.MCP9808 as MCP9808
+from Adafruit import ADS1x15
+   Adafruit_I2C.py
+   Adafruit_GPIO
+      FT232H.py
+      GPIO.py
+      I2C.py
+      MCP230xx.py
+      PCF8574.py
+      PWM.py
+      Platform.py
+      SPI.py
+   Adafruit_PureIO
+      smbus.py  (Provided by python3-smbus?)
+from Adafruit.MCP4725 import MCP4725 as mcp4725
+from wpdir import wiringpi
+import adafruit_max31865 as max3
+import board
+import digitalio
+import busio
+import adafruit_max31865 as max3
+
+sudo pip3 install adafruit-blinka ?
