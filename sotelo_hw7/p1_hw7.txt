@@ -1,0 +1,7 @@
+# Problem 1 Howework 7 - p1_hw7.py
+
+a.
+In the interactive python window I entered the following:
+
+"os.execv('/bin/ls',[''])" which took me out of the interactive python window. This demonstrates that the command replaces program by the program that calls it. 
+b.

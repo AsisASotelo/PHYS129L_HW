@@ -1,0 +1,5 @@
+# p8_hw6.txt
+
+This is the text file for p8_hw6.txt the accompanying plots and programs are in their respective files..
+
+

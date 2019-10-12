@@ -1,0 +1,8 @@
+###PROBLEM 2####
+
+##COMPUTATION TIME##
+
+At 10^11 guesses per second, how many days would it take to check all of the possibilities for the last configuration in the previous problem?
+
+
+	.7 Days 

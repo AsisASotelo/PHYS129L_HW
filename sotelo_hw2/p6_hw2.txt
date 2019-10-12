@@ -1,0 +1,26 @@
+##Problem 6 ##
+
+##User Input##
+
+Write a program that asks the user to enter a string, after which it prints the string 10 times. Print each instance of the string on separate line.
+
+#############THE PROGRAM IS THE FOLLOWING ###########
+
+#!/usr/bin/env python3
+
+#PROBLEM 6 PROGRAM
+#
+#p6_program.py - Asks user to enter a string prints out string 10 times
+#
+#05jul2019 Asis A Sotelo
+
+#
+
+
+
+instr = input("Please enter a string:")
+
+for i in range(0,9):
+    print(instr)
+
+

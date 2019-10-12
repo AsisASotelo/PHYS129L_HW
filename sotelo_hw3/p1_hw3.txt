@@ -1,0 +1,24 @@
+###Homework 3 Problem 1###
+
+##p1_hw3.txt
+##Explain the function of the dfr alias that has been installed on your RPi.
+
+
+
+
+
+The alias dfr is written as:
+
+"find dfr='find . -maxdepth 1 -mtime -1 -o -ctime -1'
+
+The find is a command that searches the directory tree specified by evaluating the given expression
+from left to right, until the outcome is known left hand side false for and operations or tur for or
+then moves on to next file. Searches for files. Global options always return true the maxdepth 1 checks 
+how many levels of directory below the starting point. Ctime n, where n is 1 checks if status was last 
+changed n*24 hours ago. Same with mtime -n where n is one checks if the file has been modified by n*24 
+housr ago. The o is the or which says expr1 or expr2 so expr2 is not evaluated if expr1 is.
+
+
+
+
+

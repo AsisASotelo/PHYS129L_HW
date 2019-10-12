@@ -1,0 +1,7 @@
+##PROBLEM 1##
+
+#CAT and ECHO#
+
+Explain the difference between the cat and echo commands 
+
+	The cat command is to concatenate files that are given with standard output 	which is given as default if the argurment is left empty. Echo will simply p	rint out the arguement to standard out. As the man page explains it just dis	plays a line of text. The man for concatenate states "concatenate files and 	print on the standard output.

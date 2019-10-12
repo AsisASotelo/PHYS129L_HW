@@ -1,0 +1,47 @@
+
+
+SUMCOMMAND=md5sum   ##SETS the name of command to md5sum
+
+PROGNAME=`basename $0`  ## SETS the program name in the directory of the user
+USAGE="$PROGNAME [directory]" ## SETS what the arguments the command will take.
+NARGSa=0                ## Shows number of arguments that can be taken by the command
+NARGSb=1
+
+error_exit()     ## This is the function to be run with an error 
+{
+echo ""
+echo $1                 ### Will print out 1 as a the error to errstandard 
+echo ""
+echo "$PROGNAME exiting." ## Prints that program is exiting
+echo ""
+exit 1
+}
+
+errorcheck()
+{
+if [ $? -ne 0 ]  ## Method to check error that was outputed
+then
+   error_exit "Error $1"
+fi
+}
+
+if [ $# -ne $NARGSa -a $# -ne $NARGSb ]  
+then
+   error_exit "usage: $USAGE"
+fi
+
+echo
+
+if [ $# -eq 1 ]
+then
+   unset CDPATH
+   cd "$1" > /dev/null
+   errorcheck "changing to specified directory."
+fi
+
+find . -noleaf -type f | sort | while read i  # deal with spaces in filenames
+do
+   cat "$i"
+done | $SUMCOMMAND
+
+echo

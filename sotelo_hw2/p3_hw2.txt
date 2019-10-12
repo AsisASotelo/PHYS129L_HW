@@ -1,0 +1,81 @@
+##Problem 3##
+
+#Mounting and Using a Disk#
+
+		I will output all of the steps in the procedure and note no output to th        ose steps that provide no output
+
+ a. Run cat /proc/partitions | grep sd
+		
+		OUTPUT : NO OUTPUT
+
+ b. Insert flash drive ..
+	
+		OUTPUT :	
+					8        0   15138816 sda
+					8        1   15137792 sda1
+
+ c. Run df | grep sd ..
+	
+		#PI had mounted my drive already so I unmounted it.
+
+		OUTPUT : 
+				
+				FIRST OUTPUT:
+	
+					/dev/sda1       14900104  204936  13921896   2% /media/pi/2b					30cf1b-f8f1-40aa-b4b3-988650a99f45 
+				
+				NO SECOND OUTPUT:
+ d. Create a directory under /home/pi . . .
+
+		Created the directory the_drive
+
+		INPUT: pisotelo:/home/pi$ sudo mount /dev/sda1 /home/pi/the_drive
+
+
+ e. Run sudo mount | grep sd with no arguments
+
+		OUTPUT :
+				
+					gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,n					osuid,nodev,relatime,user_id=1000,group_id=1000)
+					/dev/sda1 on /home/pi/the_drive type ext4 (rw,relatime,block					_validity,delalloc,nojournal_checksum,barrier,user_xattr,acl					)
+ 
+ f. Run df | grep sd to check if its working
+   
+		OUTPUT : 
+			
+					/dev/sda1       14900104   40984  14085848   1% /home/pi/the					_drive
+
+ g. Create a small text file on the mounted drive
+ 
+		OUTPUT :
+
+					NO OUTPUT
+
+ h. UNMOUNT THE FLASH DRIVE
+
+		OUTPUT : 
+			
+					NO OUTPUT
+
+ i. Run sudo mount | grep sd no arguments
+	
+		OUTPUT : 
+
+					gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,n					osuid,nodev,relatime,user_id=1000,group_id=1000)
+
+ j. Run df | grep sd 
+
+		OUTPUT : 
+
+					No output
+
+ k. Mount dev/sda1 on /mnt
+
+		OUTPUT : 
+
+				NO OUTPUT
+
+ l. Run cat /mnt/filename 
+
+		OUTPUT : This is small text
+					

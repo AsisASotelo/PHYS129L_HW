@@ -1,0 +1,22 @@
+##PROBLEM 5##
+
+#Shell Script Provide a complete explanation of the function of this script.#
+
+#
+# proctemp - Return processor temperature
+#
+# 03Jul17  Updated to use $() in addition to ``
+# 22Apr16  Everett Lipman
+#
+
+TDIR=/sys/class/thermal
+TBASE=thermal_zone
+
+for i in $TDIR/$TBASE*
+do
+   echo -n "`basename $i`: "
+   echo "scale=1; $(cat $i/temp)/1000.0" | bc
+done
+        
+
+Answer: Here we assign to variables "TDIR" and "TDBASE" we then use -n as a newline feed and loops for i iterations of TBASE* because there is only "thermal_zone 0" it only prints that and only once. The first is the double quotes which make all of the special characters inside the shell to lose their special meaning except for $ and '. So the first part 'basename $i' just prints out every iteration of i so "basename $0". Thisis then echoed by the double quotes which uses the command substitution "$" as well as the basenamve variable coupled with the "TDIR/TBASE*" gives " bashpisotelo:/home/pi/sys/class/thermal_zone0" the quotation then elimates all special characters as well asthe directories and gives only "thermal_zone0. Then the following line begins with the nested cat command which command substitutes i which is the thermal_zone0 directory. Tthen the number is taken from temp file so what is echoed is "scale=1; 54700/1000.0". This text stream is then fed into bc which does number calculations  and the scale = 1 sets the decimal point to one number after the decimal point so it prints out "thermal_zone0:54.7".

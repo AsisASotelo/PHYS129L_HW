@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+#Asis A Sotelo
+#p2_hw4.py
+#Project Specification
+#18Jul2019
+
+A. I am the only one in my group
+
+B. I would like to create a 3D raytracing of the Mandelbrot set which is one of the suggestion projects on the project guideline paper.
+I have started researching where I should start and have found a couple of sources including a python only based raytracing 
+approach that I have cited below. In order to begin designing this program I will approach the design element first by identifying 
+my goal: to render a 400x300 pixel image of a Mandelbrot figure using raytracing techniques. I will mainly use python and have 
+begun to research resources that might help in the set up of the Mandelbrot set as well as the implementation of the raytracing 
+technique. I have included the citations for the resources below.
+
+C. Will not be needing any additional hardwar.
+
+D.Will be using the following:
+
+    a.Blender for python. 
+    b.Matplotlib 
+    c.Mandelbulb
+    
+E.I will be writing a python programing first screating a 3d Mandelbrot object then use raytracing to render an image of the at obect.
+The program will first take at least 100 iterations of the Mandelbrot then the second part will have to do with the raytracing.
+
+F. I will finish preliminaries by MONDAY. Have the first part, concerning the 3D Mandelbrot, done be week 5. I will have the raytracing
+done by the end of week 5 which should give me time to polish the program.
+
+
+

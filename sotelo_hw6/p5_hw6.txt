@@ -1,0 +1,3 @@
+# p5_hw6.txt
+
+This is the txt file for p5_hw6.txt fourier analysis. I used an LED lightbul and from the EPS plot which can be found in the p5 eps file and the p5_data1 file tthe frequency I found was 120Hz. 

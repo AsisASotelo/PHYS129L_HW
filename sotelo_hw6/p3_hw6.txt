@@ -1,0 +1,5 @@
+# p3_hw6.txt
+
+This is the homework txt file for p3. I changed the y-axis so it followed the y-axis of the sensor
+
+

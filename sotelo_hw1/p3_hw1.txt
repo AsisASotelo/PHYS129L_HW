@@ -1,0 +1,13 @@
+### Problem 3  ###
+
+## Password Security, Part 2 ##
+
+Having determined in the previous problem that is 8 character password is not sufficiently secure, a student increases its length to 12- characters, which he chooses at random from the 94 printable possibilities.
+
+a. At a rate of 10^12 guesses per second, how many years would it take to try every possible password of this new length drawn from the 94 character set?
+
+	15,091 years 
+
+b. For  a passphrase using only lower and upper case letters and spaces, how many characters would it take to match the strength of the student's 12-character password?
+
+	14 characters

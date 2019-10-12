@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+#Asis A Sotelo
+#p1_hw4.txt
+#Project Guidelines
+#18Jul2019
+
+
+# Made sure I send my project description paragpraph to Prof. Lipman

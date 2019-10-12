@@ -1,0 +1,17 @@
+
+#Asis A Sotelo
+#p4_hw3.py
+#Doing Your Backups 
+#17Jul2019
+
+# OUTPUT of ls -alF /mnt of my Backup ON 17th of JULY
+
+
+pisotelo:/home/pi$ ls -alF /mnt
+total 32
+drwxr-xr-x  4 pi   pi    4096 Jul 17 16:21 ./
+drwxr-xr-x 21 root root  4096 Apr  8 03:30 ../
+drwx------  2 root root 16384 Jul  2 21:41 lost+found/
+drwxr-xr-x 31 pi   pi    4096 Jul 17 16:11 pi_17Jul19/
+-rw-r--r--  1 pi   pi      19 Jul  2 22:20 small_text_file.txt
+

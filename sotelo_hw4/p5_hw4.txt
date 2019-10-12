@@ -1,0 +1,97 @@
+
+#Asis A Sotelo
+#p5_hw4.txt
+#Diff 
+#17Jul2019
+
+#OUTPUT OF DIFF WITH SIMPLE_PLOT.py and MY CODE p4_hw4.py
+
+
+pisotelo:/home/pi$ diff /home/pi/physrpi/python/simple_plot.py /home/pi/sotelo_homework/sotelo_hw4/p3_hw4.py 
+1a2
+> # -*- coding: utf-8 -*-
+3,31c4,7
+< #
+< # simple_plot.py - Plot x,y data with error bars
+< #
+< # 02May18  Adjusted plotting defaults
+< # 13Jul16  Everett Lipman
+< #
+< USAGE="""
+< usage: simple_plot.py datafile
+< 
+<        datafile is a 3-column text file containing numbers x,y,yerr.
+<        Data will be plotted with error bars of length 2*yerr.
+< """
+< 
+< import sys
+< import os
+< 
+< if len(sys.argv) != 2:
+<    print(USAGE, file=sys.stderr)
+<    print('', file=sys.stderr)
+<    exit(1)
+< 
+< datafile = sys.argv[1]
+< 
+< if not os.access(datafile, os.F_OK):
+<    print('\nData file "%s" does not exist or cannot be read.\n'
+<          % datafile, file=sys.stderr)
+<    print(USAGE, file=sys.stderr)
+<    print('', file=sys.stderr)
+<    exit(1)
+---
+> #Asis A Sotelo
+> #p3_hw3.py
+> #Wind Speed 
+> #17Jul2019
+36,37d11
+< drows = np.loadtxt(datafile)
+< wdat = drows.T
+39,43c13,21
+< #
+< # compute plot margins
+< #
+< xmar = int(abs((wdat[0][-1] - wdat[0][0])/6))
+< ymar = int(abs(max(wdat[1])/4))
+---
+> datafiles= np.loadtxt('/home/pi/physrpi/coursefiles/wind.dat')
+> 
+> wind_data =datafiles.T
+> 
+> xmar = int(abs((wind_data[0][-1] - wind_data[0][0])/6))
+> ymar = int(abs(max(wind_data[1])/4))
+> 
+> print(xmar)
+> print(ymar)
+46,49c24,38
+< ax1.set_xlim(wdat[0][0]-xmar, wdat[0][-1]+xmar)
+< ax1.set_ylim(0,max(wdat[1])+ymar)
+< # ax1.plot(wdat[0], wdat[1], 'o')
+< ax1.errorbar(wdat[0],wdat[1],yerr=wdat[2],fmt='o', capsize=3)
+---
+> 
+> 
+> ## THE FOLLOWING SETS THE AXIS LABELS AND TITLE OF GRAPH
+> ax1.set_xlabel("Time of Day in Hours")
+> ax1.set_ylabel("Speed of Wind [Knots]")
+> ax1.set_title("Wind Speed Vs. Time of Day")
+> 
+> ## SETS TICKS LABEL AND FONT AS WELL AS ERROR BARS 
+> 
+> 
+> ax1.set_xlim(wind_data[0][0]-xmar, wind_data[0][-1]+xmar)
+> ax1.set_ylim(0,max(wind_data[1])+ymar)
+> #ax1.plot(wind_data[0], wind_data[1], 'o')
+> ax1.errorbar(wind_data[0],wind_data[1],yerr=wind_data[2],fmt='o', capsize=3)
+> 
+52c41,48
+< input("\nPress <Enter> to exit...\n")
+---
+> ## SAVES THE FIGURE TO AN .EPS FILE
+> 
+> plt.savefig("wind_data.eps")
+> 
+> print(wind_data)
+> print(type(wind_data))
+> 

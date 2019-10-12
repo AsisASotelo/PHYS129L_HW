@@ -1,0 +1,9 @@
+##Problem 2##
+
+#Variable and Aliases#
+
+Explain the difference in bash between variable assignment and aliases
+
+	A variable assignment is a replacement of the content wherever the variable 	is used. Aliases are used morea as a commmand. You could not call a command 	with variable assignment.
+
+

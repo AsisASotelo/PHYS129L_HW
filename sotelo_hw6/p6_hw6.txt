@@ -1,0 +1,10 @@
+# p6_hw6.txt
+
+This is the txt file for problem 6, I cooled the sensor and captured data at 4 samples per second for 10 seconds. The eps can be found in the p6 EPS file. The p6_exp txt file has the data that I used. I utilized scipy.optimize.curve_fit and got the following equation:
+
+y(x) = -10.73591682 e^(-.38249129x) + 26.296143 
+
+where x was the array the data and the time constant is the inverse of exponential power coefficient: 2.614438619
+
+the plot can be found in p6_plot.eps.
+

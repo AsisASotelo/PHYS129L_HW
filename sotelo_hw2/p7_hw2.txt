@@ -1,0 +1,47 @@
+## PROBLEM 7##
+
+##Processor Temperature##
+
+The temperature of the RPI CPU in milidegrees celsius can be found by reading this file: /sys/class/thermal_zone/temp.
+
+a. Write a program that does the following.
+
+	1. Use the subprocess module to read the temp by running cat
+	2. Convert the string returned by cat using float(), and divide to get degrees cel		 sius.
+	3. Print out the temperature once per second in an infinite loop
+
+
+##### THIS IS THE PROGRAM FOR (a)#####
+
+
+import subprocess
+import time
+import math
+
+print() ## This clears the input buffer
+
+#
+#
+
+output_temp = subprocess.check_output(['cat','/sys/class/thermal/thermal_zone0/temp'],universal_newlines =True)
+
+new_temp = (float(output_temp))/1000.0
+
+
+while True:
+    output_temp = subprocess.check_output(['cat','/sys/class/thermal/thermal_zone0/temp'],universal_newlines =True)
+    new_temp = (float(output_temp))/1000.0
+    time.sleep(1)
+    print(new_temp)
+
+#### THIS IS THE PROGRAM FOR (b) #######
+
+
+
+while True:
+
+    output_temp = subprocess.check_output(['cat','/sys/class/thermal/thermal_zone0/temp'],universal_newlines = True)
+    new_temp = (float(output_temp))/1000.0
+    print(new_temp)                                                                                                                                              
+
+ANSWER: The CPU temperature started heating up slowly rising to ~60 Celsius.

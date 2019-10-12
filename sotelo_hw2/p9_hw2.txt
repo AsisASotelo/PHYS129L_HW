@@ -1,0 +1,33 @@
+### PROBLEM 9 ###
+
+##Read File and Average##
+
+#WRITE A PROGRAM THAT READS NUMBERS FROM A USER SPECIFIED FILE AND PRINTS OUT THEIR AVERAGE. THE FILE SHOULD CONTAIN ONE NUMBER PER LINE
+
+import os
+import sys
+import math
+import subprocess
+
+
+def file_readlines(filename):
+
+    infile = open(filename, 'r')
+    inlines = infile.readlines()
+    infile.close()
+    return(inlines)
+
+user_file = input("Enter File Name:\n")
+print()
+
+numbers = (file_readlines(user_file))
+
+print(type(numbers))
+print(type(numbers[0]))
+
+
+[float(i) for i in numbers]
+
+
+
+

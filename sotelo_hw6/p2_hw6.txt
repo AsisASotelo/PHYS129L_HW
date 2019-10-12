@@ -1,0 +1,5 @@
+# Homework 6 Problem 2
+
+# This is the text file for problem 2:
+
+I could not get rid of the jagginess of the graph.

@@ -1,0 +1,45 @@
+#### PROBLEM 8###
+
+## WRITE FILE ##
+
+Write a program that creates a file containing two user provided strings, one per line:
+
+### THIS IS THE PROGRAM ###
+
+
+import os
+import sys
+
+
+string1 = input("Enter String 1:")
+
+print()
+
+string2 = input("Enter String 2:")
+
+listOfStrings = [string1,string2]
+
+fileOfUSER = input("Enter New File Name:")
+
+
+
+
+print()
+
+
+
+
+
+
+def carefule_write(outlines, filename):
+    if os.access(filename, os.F_OK):
+        print('\nOutput file already exists: %s\n\n' % filename, file =sys.stderr)
+        return
+
+    outfile = open(filename, 'w')
+    for i in outlines:
+        outfile.write('%s \n'% i)
+    outfile.close()
+
+carefule_write(listOfStrings,fileOfUSER)
+

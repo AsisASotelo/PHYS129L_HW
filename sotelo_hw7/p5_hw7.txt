@@ -1,0 +1,39 @@
+# Problem 5 Homework 7
+
+#p5_hw7.txt
+
+This is the text file for Problem 5
+
+## I ran the trp wrapper: "trp p1_hw7.py" and go the file tr which I analyzed for the problem.
+
+a. The line where the process forks, including 5 lines before and 5 lines after 
+
+As you can see from the code below the trace writes out the numbers and teh about to fork line. Then it goes newselect as it hits the conditional. Then it goes to clone call wihc creates the fork in the os. The CHILD part is the new child with a pointer id to the address of the new processs.Then it goes out of the select and it does the actions of that process the process number goes from 2720 to 2722 as it changes from one PID to another.
+
+b. The child exeuctes ls and then goes closes the child with close(1) and close (2) and the exit_group(0) which closes that process. It then continues with the parent process by sending a SIGCHILD to the Parent process the child fork is closed.
+
+c. The last 5 lines have the final line of the program and then the keyboard interrupt from the system. Then the rt_sigaction sends a signal to cut the process and restore the user back to bash. The process is then ended with the exit_group and the instead of sending a 0 to the stderr it exits with a 1.
+
+
+
+	2720  _newselect(0, NULL, NULL, NULL, {tv_sec=0, tv_usec=500000}) = 0 (Timeout)
+2720  write(1, "10\n", 3)               = 3
+2720  _newselect(0, NULL, NULL, NULL, {tv_sec=0, tv_usec=500000}) = 0 (Timeout)
+2720  write(1, "About to Fork . . .\n", 20) = 20
+2720  _newselect(0, NULL, NULL, NULL, {tv_sec=0, tv_usec=300000}) = 0 (Timeout)
+2720  clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x76f426a8) = 2722
+2720  _newselect(0, NULL, NULL, NULL, {tv_sec=0, tv_usec=500000}) = 0 (Timeout)
+2720  write(1, "10\n", 3)               = 3
+2720  _newselect(0, NULL, NULL, NULL, {tv_sec=0, tv_usec=500000}) = 0 (Timeout)
+2720  write(1, "About to Fork . . .\n", 20) = 20
+2720  _newselect(0, NULL, NULL, NULL, {tv_sec=0, tv_usec=300000}) = 0 (Timeout)
+2720  clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x76f426a8) = 2722
+2722  set_robust_list(0x76f426b0, 12)   = 0
+2720  _newselect(0, NULL, NULL, NULL, {tv_sec=0, tv_usec=500000} <unfinished ...>
+2722  getpid()                          = 2722
+2722  getpid()                          = 2722
+2722  set_robust_list(0x76f426b0, 12)   = 0
+2720  _newselect(0, NULL, NULL, NULL, {tv_sec=0, tv_usec=500000} <unfinished ...>
+2722  getpid()                          = 2722
+2722  getpid()                          = 2722
+

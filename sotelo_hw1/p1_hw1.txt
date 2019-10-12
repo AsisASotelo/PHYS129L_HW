@@ -1,0 +1,27 @@
+###PROBLEM 1###
+
+##PASSWORD SECURITY##
+
+For each of the following conditions, determin the number of possible passwords.
+
+a. 8 binary characters, each of wich can be either 0 or 1.
+	
+	256 possibilities.
+
+b. 4 characters, each one having 16.
+
+	65,536 possibilities
+
+c. 2 charactres, 26 possibilities for each (a-z)
+
+	676 possibilities
+
+d. 8 characters, each being one of a-z, A-Z, or 0-9
+
+	2.18x10^14
+
+e. 8 characters, each being one of 94 printable characters.
+
+	6.095x10^15 possibilities
+
+
